@@ -1,13 +1,13 @@
 import sys
 sys.path.append('../')
 
-from src.gatt import Gatt
+from src.gatt_tool_wrapper import GattToolWrapper
 from src.const import *
 
 def test_start_and_stop():
     res = True
     try:
-        g = Gatt()
+        g = GattToolWrapper()
         g.start()
         g.stop()
 
@@ -20,7 +20,7 @@ def test_start_and_stop():
 def test_connect():
     res = True
     try:
-        g = Gatt()
+        g = GattToolWrapper()
         g.start()
         g.connect(DEV_UUID)
         g.stop()
