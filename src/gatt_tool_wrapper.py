@@ -3,7 +3,6 @@
 import binascii
 from pygatt import GATTToolBackend
 
-
 class GattToolWrapper(GATTToolBackend):
     """Wrapper to GATT tool.
 

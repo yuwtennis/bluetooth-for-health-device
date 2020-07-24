@@ -3,7 +3,7 @@
 import logging
 from gatt_tool_wrapper import GattToolWrapper
 from util import read_yaml
-from const import Const
+from const import DEV_ADDRESS, UUID_LIST
 
 def seq_body_composition_monitor() -> None:
     """Runs flow for BCM
@@ -24,12 +24,12 @@ def seq_body_composition_monitor() -> None:
 
     try:
         # Read uuid list
-        data = read_yaml(Const.UUID_LIST)
+        data = read_yaml(UUID_LIST)
 
         # Init Device
         gatt = GattToolWrapper()
         gatt.start()
-        gatt.connect(Const.DEV_UUID)
+        gatt.connect(DEV_ADDRESS)
 
         # Read characteristics for Device Information
         for key, val in data['di'].items():

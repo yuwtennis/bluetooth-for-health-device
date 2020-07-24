@@ -2,7 +2,7 @@ import sys
 sys.path.append('../src')
 
 from gatt_tool_wrapper import GattToolWrapper
-from const import Const
+from const import DEV_ADDRESS
 
 def test_start_and_stop():
     res = True
@@ -22,7 +22,7 @@ def test_connect():
     try:
         g = GattToolWrapper()
         g.start()
-        g.connect(Const.DEV_UUID)
+        g.connect(DEV_ADDRESS)
         g.stop()
 
     except Exception as err:
@@ -36,7 +36,7 @@ def test_char_read():
     try:
         g = GattToolWrapper()
         g.start()
-        g.connect(Const.DEV_UUID)
+        g.connect(DEV_ADDRESS)
 
         # Read Model number string
         g.char_read_as_str('00002a24-0000-1000-8000-00805f9b34fb')

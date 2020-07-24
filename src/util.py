@@ -1,5 +1,4 @@
-"""Utility module.
-"""
+"""Utility module."""
 
 from typing import Dict
 import yaml

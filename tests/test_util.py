@@ -1,8 +1,8 @@
 import sys
-sys.path.append('../')
+sys.path.append('../src/')
 
-from src.util import *
-from src.const import *
+from util import read_yaml
+from const import UUID_LIST
 
 def test_read_yaml():
     assert len(read_yaml('../src/' + UUID_LIST)) > 0

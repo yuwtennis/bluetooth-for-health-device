@@ -4,9 +4,5 @@ Constants will be used widely accross classes and modules.
 
 """
 
-class Const:
-    """Class constants. """
-
-    UUID_LIST = 'uuid_list.yaml'
-    DEV_UUID = '28:FF:B2:BC:23:38'
-
+UUID_LIST = 'uuid_list.yaml'
+DEV_ADDRESS = '28:FF:B2:BC:23:38'
