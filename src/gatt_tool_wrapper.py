@@ -1,10 +1,33 @@
-import pygatt
+"""Class file.
+"""
+
+from pygatt import GATTToolBackend
 import binascii
 
-class GattToolWrapper(BLEDevice):
+class GattToolWrapper(GATTToolBackend):
+    """Wrapper to GATT tool.
+
+    Inherits GATTToolBackend from pygatt modules.
+
+    Attributes:
+        None
+    """
 
     def __init__(self) -> None:
-        self._adapter = pygatt.GATTToolBackend()
+        """Constructer for this class.
+
+        Call super class constructer to initialize class variables.
+
+        Args:
+            self: Class object
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        super().__init__()
 
     def start(self) -> None:
         """Wrapper to start function.
@@ -21,7 +44,7 @@ class GattToolWrapper(BLEDevice):
         Raises:
             None
         """
-        self._adapter.start()
+        super().start()
 
     def connect(self, dev_addr: str) -> None:
         """Wrapper to connect function.
@@ -39,7 +62,7 @@ class GattToolWrapper(BLEDevice):
         Raises:
             None
         """
-        self._device = self._adapter.connect(dev_addr)
+        self._device = super().connect(dev_addr)
 
     def stop(self) -> None:
         """Wrapper to stop function.
@@ -57,7 +80,7 @@ class GattToolWrapper(BLEDevice):
         Raises:
             None
         """
-        self._adapter.stop()
+        super().stop()
 
     def char_read(self, uuid: str) -> str:
         """Wrapper for char_read
