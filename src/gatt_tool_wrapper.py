@@ -32,7 +32,8 @@ class GattToolWrapper(GATTToolBackend):
 
         self._device = None
 
-    def connect(self, dev_addr: str) -> None:
+    def connect(self, address: str, timeout=None,
+        address_type=None, auto_reconnect=None ) -> None:
         """Wrapper to connect function.
 
         https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
@@ -48,7 +49,7 @@ class GattToolWrapper(GATTToolBackend):
         Raises:
             None
         """
-        self._device = super().connect(dev_addr)
+        self._device = super().connect(address)
 
     def read_char_as_str(self, uuid: str) -> str:
         """Wrapper for char_read
