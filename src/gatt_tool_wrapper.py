@@ -1,8 +1,9 @@
 """Class file.
 """
 
-from pygatt import GATTToolBackend
 import binascii
+from pygatt import GATTToolBackend
+
 
 class GattToolWrapper(GATTToolBackend):
     """Wrapper to GATT tool.
@@ -29,22 +30,7 @@ class GattToolWrapper(GATTToolBackend):
         """
         super().__init__()
 
-    def start(self) -> None:
-        """Wrapper to start function.
-
-        https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
-            pygatt/backends/gatttool/gatttool.py#L244
-
-        Args:
-            self: Class object
-
-        Returns:
-            None
-
-        Raises:
-            None
-        """
-        super().start()
+        self._device = None
 
     def connect(self, dev_addr: str) -> None:
         """Wrapper to connect function.
@@ -63,24 +49,6 @@ class GattToolWrapper(GATTToolBackend):
             None
         """
         self._device = super().connect(dev_addr)
-
-    def stop(self) -> None:
-        """Wrapper to stop function.
-
-        https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
-            pygatt/backends/gatttool/gatttool.py#L302
-
-        Args:
-            self: Class object
-            dev_addr: device mac address
-
-        Returns:
-            None
-
-        Raises:
-            None
-        """
-        super().stop()
 
     def char_read(self, uuid: str) -> str:
         """Wrapper for char_read
@@ -116,5 +84,5 @@ class GattToolWrapper(GATTToolBackend):
         Raises:
             NotificationTimeout
         """
-        
+
         self._device.char_write_handle(handle)

@@ -17,5 +17,5 @@ def read_yaml(name: str) -> Dict:
     Raises:
         None
     """
-    with open(name, 'r') as fd:
-        return yaml.load(fd, yaml.FullLoader)
+    with open(name, 'r') as f:
+        return yaml.load(f, yaml.FullLoader)
