@@ -28,4 +28,4 @@ jobs:
     - name: Lint with pylint
       run: |
         # If pylint fails then exit
-        cd src && pylint *.py
+        pylint src/*.py
