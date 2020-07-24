@@ -39,7 +39,7 @@ def test_char_read():
         g.connect(DEV_UUID)
 
         # Read Model number string
-        g.char_read('00002a24-0000-1000-8000-00805f9b34fb')
+        g.char_read_as_str('00002a24-0000-1000-8000-00805f9b34fb')
         g.stop()
 
     except Exception as err:

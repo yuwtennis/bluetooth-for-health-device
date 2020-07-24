@@ -1,5 +1,5 @@
-import pygatt
-import util
+"""Main method.
+"""
 
 if __name__ == '__name__':
 

@@ -50,7 +50,7 @@ class GattToolWrapper(GATTToolBackend):
         """
         self._device = super().connect(dev_addr)
 
-    def char_read(self, uuid: str) -> str:
+    def read_char_as_str(self, uuid: str) -> str:
         """Wrapper for char_read
 
         https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
