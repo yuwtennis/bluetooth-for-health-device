@@ -32,8 +32,7 @@ class GattToolWrapper(GATTToolBackend):
 
         self._device = None
 
-    def connect(self, address: str, timeout=None,
-        address_type=None, auto_reconnect=None ) -> None:
+    def connect(self, address: str, timeout=None, address_type=None, auto_reconnect=None) -> None:
         """Wrapper to connect function.
 
         https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
@@ -41,7 +40,10 @@ class GattToolWrapper(GATTToolBackend):
 
         Args:
             self: Class object
-            dev_addr: device mac address
+            address: device mac address
+            timeout: None
+            address_type: None
+            auto_reconnect: None
 
         Returns:
             None
