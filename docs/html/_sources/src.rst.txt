@@ -1,0 +1,38 @@
+src package
+===========
+
+Submodules
+----------
+
+src.const module
+----------------
+
+.. automodule:: src.const
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.gatt module
+---------------
+
+.. automodule:: src.gatt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.util module
+---------------
+
+.. automodule:: src.util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: src
+   :members:
+   :undoc-members:
+   :show-inheritance:
