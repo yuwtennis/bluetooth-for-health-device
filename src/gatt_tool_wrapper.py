@@ -1,5 +1,4 @@
-"""Class file.
-"""
+"""Class file."""
 
 import binascii
 from pygatt import GATTToolBackend

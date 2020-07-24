@@ -4,7 +4,6 @@
 from typing import Dict
 import yaml
 
-
 def read_yaml(name: str) -> Dict:
     """Opens yaml file and retun data.
 
