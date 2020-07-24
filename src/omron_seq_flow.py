@@ -1,9 +1,9 @@
 """Defines communication flow for HB281."""
 
 import logging
-from gatt_tool_wrapper import GattToolWrapper
-from util import read_yaml
-from const import DEV_ADDRESS, UUID_LIST
+from .gatt_tool_wrapper import GattToolWrapper
+from .util import read_yaml
+from .const import DEV_ADDRESS, UUID_LIST
 
 def seq_body_composition_monitor() -> None:
     """Runs flow for BCM
