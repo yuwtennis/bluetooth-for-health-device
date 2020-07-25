@@ -4,5 +4,9 @@ Constants will be used widely accross classes and modules.
 
 """
 
-UUID_LIST = 'uuid_list.yaml'
-DEV_ADDRESS = '28:FF:B2:BC:23:38'
+import importlib
+
+UUID_LIST = '{}/{}'.format(\
+    importlib.import_module('iot').__file__.replace('__init__.py', ''),\
+    'data/omron_hbf228t_uuids.yaml')
+HBF228T_DEV_ADDRESS = '28:FF:B2:BC:23:38'

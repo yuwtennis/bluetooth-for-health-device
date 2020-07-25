@@ -1,8 +1,6 @@
-import sys
-sys.path.append('../src')
 
-from gatt_tool_wrapper import GattToolWrapper
-from const import DEV_ADDRESS
+from src.gatt_tool_wrapper import GattToolWrapper
+from src.const import DEV_ADDRESS
 
 def test_start_and_stop():
     res = True

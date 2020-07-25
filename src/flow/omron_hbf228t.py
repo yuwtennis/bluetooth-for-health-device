@@ -1,11 +1,11 @@
 """Defines communication flow for HB281."""
 
 import logging
-from .gatt_tool_wrapper import GattToolWrapper
-from .util import read_yaml
-from .const import DEV_ADDRESS, UUID_LIST
+from iotble.access.gatt_tool_wrapper import GattToolWrapper
+from iotble.util import read_yaml
+from iotble.const import HBF228T_DEV_ADDRESS, UUID_LIST
 
-def seq_body_composition_monitor() -> None:
+def body_composition_monitor() -> None:
     """Runs flow for BCM
 
     Runs workflow for  Bluetooth standard protocol for Body Composition Monitor
@@ -29,7 +29,7 @@ def seq_body_composition_monitor() -> None:
         # Init Device
         gatt = GattToolWrapper()
         gatt.start()
-        gatt.connect(DEV_ADDRESS)
+        gatt.connect(HBF228T_DEV_ADDRESS)
 
         # Read characteristics for Device Information
         for key, val in data['di'].items():
