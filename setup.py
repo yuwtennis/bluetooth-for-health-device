@@ -23,7 +23,10 @@ setuptools.setup(
     ],
     python_requires='>=3.7',
     package_dir={PACKAGE:'src'},
-    packages=[PACKAGE],
+    packages=[
+        PACKAGE,
+        '{}.{}'.format(PACKAGE, 'access'),
+        '{}.{}'.format(PACKAGE, 'flow') ],
     package_data={PACKAGE: ['data/*']},
     install_requires=requirements
 )

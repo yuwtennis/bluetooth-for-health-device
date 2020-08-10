@@ -1,7 +1,7 @@
 
-from src.omron_seq_flow import seq_body_composition_monitor
+from iotble.flow.omron_hbf228t import body_composition_monitor
 
-def test_seq_body_composition_monitor():
+def test_body_composition_monitor():
 
     res = True
 
