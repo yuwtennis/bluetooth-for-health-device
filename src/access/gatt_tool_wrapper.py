@@ -3,7 +3,7 @@
 import binascii
 from pygatt import GATTToolBackend
 
-class GattToolWrapper(GATTToolBackend):
+class FedoraClient(GATTToolBackend):
     """Wrapper to GATT tool.
 
     Inherits GATTToolBackend from pygatt modules.
@@ -33,9 +33,6 @@ class GattToolWrapper(GATTToolBackend):
     def connect(self, address: str, timeout=None, address_type=None, auto_reconnect=None) -> None:
         """Wrapper to connect function.
 
-        https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
-            pygatt/backends/gatttool/gatttool.py#L405
-
         Args:
             self: Class object
             address: device mac address
@@ -49,13 +46,10 @@ class GattToolWrapper(GATTToolBackend):
         Raises:
             None
         """
-        self._device = super().connect(address)
+        self._device = super().connect(address, timeout, address_type, auto_reconnect)
 
-    def read_char_as_str(self, uuid: str) -> str:
-        """Wrapper for char_read
-
-        https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
-            pygatt/backends/gatttool/gatttool.py#L584
+    def str_read_char(self, uuid: str) -> str:
+        """Wrapper for char_read and return handle as string
 
         Args:
             self: Class object
@@ -68,22 +62,3 @@ class GattToolWrapper(GATTToolBackend):
             None
         """
         return binascii.hexlify(self._device.char_read(uuid))
-
-    def write_cccd(self, handle: str) -> None:
-        """Wrapper for char_read
-
-        https://github.com/peplin/pygatt/blob/8916795617b64d02877aeb115aa6371a2bd7e516/
-            pygatt/backends/gatttool/gatttool.py#L553
-
-        Args:
-            self: Class object
-            handle: handle
-
-        Returns:
-            handle: handle for characteristic
-
-        Raises:
-            NotificationTimeout
-        """
-
-        self._device.char_write_handle(handle)
